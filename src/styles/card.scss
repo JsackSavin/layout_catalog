@@ -3,12 +3,12 @@
   padding-top: 32px;
   padding-bottom: 16px;
 
-  width: 200px;
+  width: $card-width;
   border: 1px solid $border-color;
   border-radius: 5px;
   background-color: $primari-white;
   box-sizing: border-box;
-  transition: transform 0.3s ease;
+  transition: transform $transition-time ease;
 
   &__img {
     display: block;
@@ -53,8 +53,16 @@
     transform: scale(1.2);
   }
 
+  &:focus {
+    transform: scale(1.2);
+  }
+
   &:hover .card__title {
-    color: #34568b;
+    color: $hover-title-color;
+  }
+
+  &:focus .card__title {
+    color: $hover-title-color;
   }
 
   &__button {
@@ -78,8 +86,8 @@
     text-transform: uppercase;
 
     transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
+      background-color $transition-time ease,
+      color $transition-time ease;
 
     &:hover {
       border: 1px solid $accent-color;
